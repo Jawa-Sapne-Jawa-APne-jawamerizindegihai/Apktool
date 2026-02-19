@@ -39,7 +39,8 @@ jobs:
           ./gradlew clean shadowJar
 
       - name: Upload apktool.jar artifact
-        uses: actions/upload-artifact@v4 # Updated v3 -> v4
+        uses: actions/upload-artifact@v4
         with:
           name: apktool-jar
-          path: brut.apktool/build/libs/brut.apktool-all.jar
+          # Updated path to point to the cli build directory
+          path: brut.apktool/apktool-cli/build/libs/*.jar
